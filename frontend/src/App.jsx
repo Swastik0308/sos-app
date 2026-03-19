@@ -1,15 +1,20 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Dashboard from "./pages/Dashboard";
+import SendSOS from "./pages/SendSOS";
+import Navbar from "./components/Navbar";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <div className='App h-screen flex flex-col items-center justify-center'>
-          <h1 className='text-4xl font-bold text-center mt-10'>Welcome to SOS App</h1>
-          <button className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-4xl mt-20 w-50'>SOS</button>
+    <BrowserRouter>
+      <div className="min-h-screen bg-navy-950 font-body noise-overlay">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/sos" element={<SendSOS />} />
+        </Routes>
       </div>
-    </>
-  )
+    </BrowserRouter>
+  );
 }
-
-export default App
