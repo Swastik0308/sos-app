@@ -52,7 +52,7 @@ const StatusDot = ({ active, label }) => (
 // ── Peer Node Card ────────────────────────────────────────────────────────────
 const PeerCard = ({ name, distance, relay, signal, avatar }) => (
   <div className="flex items-center gap-3 p-3 rounded-xl bg-zinc-900/60 border border-zinc-800 hover:border-cyan-900 transition-colors">
-    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-900 to-blue-950 flex items-center justify-center text-cyan-300 font-mono text-sm font-bold border border-cyan-800/40">{avatar}</div>
+    <div className="w-9 h-9 rounded-full bg-linear-to-br from-cyan-900 to-blue-950 flex items-center justify-center text-cyan-300 font-mono text-sm font-bold border border-cyan-800/40">{avatar}</div>
     <div className="flex-1 min-w-0">
       <p className="text-sm text-zinc-200 font-medium truncate">{name}</p>
       <p className="text-xs text-zinc-500 font-mono">{distance} · {relay ? "Can relay" : "No internet"}</p>
@@ -224,9 +224,9 @@ const MeshVisualizer = ({ active }) => {
   ];
 
   const peers = [
-    { name: "Vivekanand R", distance: "12m", relay: true, signal: 4, avatar: "VR" },
+    { name: "R Vivekanand", distance: "12m", relay: true, signal: 4, avatar: "RV" },
     { name: "Swastik S", distance: "38m", relay: false, signal: 3, avatar: "SS" },
-    { name: "Karthik M", distance: "65m", relay: true, signal: 2, avatar: "KM" },
+    { name: "Karthik", distance: "65m", relay: true, signal: 2, avatar: "K" },
     { name: "Unknown_4F2A", distance: "91m", relay: false, signal: 1, avatar: "??" },
   ];
 
@@ -381,7 +381,7 @@ const MeshVisualizer = ({ active }) => {
                   <p className="text-[10px] text-zinc-600">Accel + Gyro threshold</p>
                 </div>
                 <button onClick={() => setFallDetect(v => !v)} className={`w-11 h-6 rounded-full transition-colors relative ${fallDetect ? "bg-cyan-600" : "bg-zinc-700"}`}>
-                  <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform ${fallDetect ? "translate-x-5" : "translate-x-0.5"}`} />
+                  <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform ${fallDetect ? "translate-x-0" : "-translate-x-5"}`} />
                 </button>
               </div>
 
@@ -401,7 +401,7 @@ const MeshVisualizer = ({ active }) => {
                   <p className="text-[10px] text-zinc-600">Microphone classification</p>
                 </div>
                 <button onClick={() => setAudioDetect(v => !v)} className={`w-11 h-6 rounded-full transition-colors relative ${audioDetect ? "bg-cyan-600" : "bg-zinc-700"}`}>
-                  <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform ${audioDetect ? "translate-x-5" : "translate-x-0.5"}`} />
+                  <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform ${audioDetect ? "translate-x-0" : "-translate-x-5"}`} />
                 </button>
               </div>
             </div>
@@ -426,8 +426,8 @@ const MeshVisualizer = ({ active }) => {
               </button>
             </div>
             <div className="space-y-2">
-              <ContactCard name="Amma" relation="Mother" phone="+91 98450 XXXXX" notified={sosActive} />
-              <ContactCard name="Neetha Ma'am" relation="Guide" phone="+91 98440 XXXXX" notified={false} />
+              <ContactCard name="Contact 1" relation="Friend" phone="+91 98450 XXXXX" notified={sosActive} />
+              <ContactCard name="Contact 2" relation="Guardian" phone="+91 98440 XXXXX" notified={false} />
               <ContactCard name="Emergency SOS" relation="Campus Security" phone="080-2323-XXXX" notified={sosActive} />
             </div>
 
@@ -470,7 +470,7 @@ const MeshVisualizer = ({ active }) => {
                   <p className="text-[10px] text-zinc-600">BLE peer-to-peer relay</p>
                 </div>
                 <button onClick={() => setMeshActive(v => !v)} className={`w-11 h-6 rounded-full transition-colors relative ${meshActive ? "bg-cyan-600" : "bg-zinc-700"}`}>
-                  <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform ${meshActive ? "translate-x-5" : "translate-x-0.5"}`} />
+                  <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-white transition-transform ${meshActive ? "translate-x-0" : "-translate-x-5"}`} />
                 </button>
               </div>
 
