@@ -12,3 +12,6 @@ A decentralized emergency communication system that works without internet using
 ## Architecture
 
 Device → Relay nodes → Internet gateway → Server
+
+# npm create vite@latest frontend -- --template react
+# npm install tailwindcss @tailwindcss/vite
