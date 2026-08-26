@@ -269,7 +269,7 @@ const MeshVisualizer = ({ active }) => {
           <>
             {/* SOS Button */}
             <div className="flex flex-col items-center py-6">
-              <div className="relative w-40 h-40">
+              <div className="relative w-39 h-39">
                 {sosActive && <div className="absolute inset-0 rounded-full bg-red-500/10 animate-ping" />}
                 {sosActive && <div className="absolute inset-2 rounded-full bg-red-500/10 animate-pulse" />}
                 <button
@@ -282,8 +282,8 @@ const MeshVisualizer = ({ active }) => {
                 >
                   {sosHold > 0 && sosHold < 100 && (
                     <svg className="absolute inset-0 w-full h-full -rotate-90">
-                      <circle cx="80" cy="80" r="68" fill="none" stroke="#ef4444" strokeWidth="4"
-                        strokeDasharray={`${2 * Math.PI * 68 * sosHold / 100} 999`} />
+                      <circle cx="73" cy="73" r="74" fill="none" stroke="#ef4444" strokeWidth="5"
+                        strokeDasharray={`${2 * Math.PI * 75 * sosHold / 100} 999`} />
                     </svg>
                   )}
                   <Icon path={ICONS.alert} size={36} className={sosActive ? "text-red-300" : "text-zinc-400"} />
